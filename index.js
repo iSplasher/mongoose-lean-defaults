@@ -48,7 +48,7 @@ function attachDefaults(schema, res) {
     return
   }
 
-  if (this._mongooseOptions.lean && this._mongooseOptions.lean.defaults) {
+  if (this._mongooseOptions.lean && this._mongooseOptions.lean.defaults !== false) {
     const defaults = []
     schema.eachPath(function (pathname, schemaType) {
       // default in schema type
